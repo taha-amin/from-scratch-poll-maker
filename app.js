@@ -1,8 +1,12 @@
+import { renderPastPoll } from './render-utils.js';
+
 // import functions and grab DOM elements
 const optionAAddButton = document.getElementById('option-a-add');
 const optionAUndoButton = document.getElementById('option-a-undo');
 const optionBAddButton = document.getElementById('option-b-add');
 const optionBUndoButton = document.getElementById('option-b-undo');
+
+const form = document.querySelector('form');
 
 const submitPollButton = document.getElementById('submit-poll');
 const questionEl = document.getElementById('poll-question');
@@ -15,7 +19,7 @@ const pastPollsEl = document.getElementById('past-polls');
 
 
 // let state
-let quetion = '';
+let question = '';
 let optionAVotes = 0;
 let optionBVotes = 0;
 let optionATitle = '';
@@ -28,6 +32,7 @@ optionAAddButton.addEventListener('click', () => {
     optionAVotes++;
 
   //call some func
+    optionAVotesEl.textContent = optionAVotes;
 });
 
 optionBAddButton.addEventListener('click', () => {
@@ -35,6 +40,7 @@ optionBAddButton.addEventListener('click', () => {
     optionBVotes++;
 
   //call some func
+    optionBVotesEl.textContent = optionBVotes;
 });
 
 optionAUndoButton.addEventListener('click', () => {
@@ -42,6 +48,7 @@ optionAUndoButton.addEventListener('click', () => {
     optionAVotes--;
 
   //call some func
+    optionAVotesEl.textContent = optionAVotes;
 });
 
 optionBUndoButton.addEventListener('click', () => {
@@ -49,7 +56,64 @@ optionBUndoButton.addEventListener('click', () => {
     optionBVotes--;
 
   //call some func
+    optionBVotesEl.textContent = optionBVotes;
 });
+
+submitPollButton.addEventListener('click', () => {
+    form.reset();
+
+    const poll = makePoll();
+
+    pastPolls.push(poll);
+
+    resetValues();
+
+    displayCurrentPoll();
+
+    displayAllPolls();
+});
+
+function makePoll() {
+    return {
+        question: question,
+        optionATitle: optionATitle,
+        optionBTitle: optionBTitle,
+        optionAVotes: optionAVotes,
+        optionBVotes: optionBVotes,
+    };
+  
+}
+
+//This function will reset values to call later in other functions if needed
+function resetValues() {
+    question = '';
+    optionATitle = '';
+    optionBTitle = '';
+    optionAVotes = 0;
+    optionBVotes = 0;
+}
+
+//function will display current state of current poll
+function displayCurrentPoll() {
+    questionEl.textContent = question;
+
+    optionATitleEl.textContent = optionATitle;
+    optionBTitleEl.textContent = optionBTitle;
+
+    optionAVotesEl.textContent = optionAVotes;
+    optionBVotesEl.textContent = optionBVotes;
+}
+
+//Function will clear out DOM and append to poll div using current state of past polls
+function displayAllPolls() {
+    pastPollsEl.textContent = '';
+
+    for (let pastPoll of pastPolls) {
+        const container = renderPastPoll(pastPoll);
+
+        pastPollsEl.append(container);
+    }
+}
 
 // set event listeners 
   // get user input
