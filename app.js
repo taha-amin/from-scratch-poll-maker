@@ -1,4 +1,18 @@
 // import functions and grab DOM elements
+const optionAAddButton = document.getElementById('option-a-add');
+const optionAUndoButton = document.getElementById('option-a-undo');
+const optionBAddButton = document.getElementById('option-b-add');
+const optionBUndoButton = document.getElementById('option-b-undo');
+
+const submitPollButton = document.getElementById('submit-poll');
+const questionEl = document.getElementById('poll-question');
+const optionATitleEl = document.getElementById('option-a-title');
+const optionAVotesEl = document.getElementById('option-a-votes');
+const optionBTitleEl = document.getElementById('option-b-title');
+const optionBVotesEl = document.getElementById('option-b-votes');
+
+const pastPollsEl = document.getElementById('past-polls');
+
 
 // let state
 
