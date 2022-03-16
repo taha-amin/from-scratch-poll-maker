@@ -17,7 +17,6 @@ const optionBVotesEl = document.getElementById('option-b-votes');
 
 const pastPollsEl = document.getElementById('past-polls');
 
-
 // let state
 let question = '';
 let optionAVotes = 0;
@@ -31,7 +30,7 @@ optionAAddButton.addEventListener('click', () => {
   //increment option A votes
     optionAVotes++;
 
-  //call some func
+
     optionAVotesEl.textContent = optionAVotes;
 });
 
@@ -39,7 +38,6 @@ optionBAddButton.addEventListener('click', () => {
   //increment option B votes
     optionBVotes++;
 
-  //call some func
     optionBVotesEl.textContent = optionBVotes;
 });
 
@@ -47,7 +45,6 @@ optionAUndoButton.addEventListener('click', () => {
   //decrement option A votes
     optionAVotes--;
 
-  //call some func
     optionAVotesEl.textContent = optionAVotes;
 });
 
@@ -55,8 +52,19 @@ optionBUndoButton.addEventListener('click', () => {
   //decrement option B votes
     optionBVotes--;
 
-  //call some func
     optionBVotesEl.textContent = optionBVotes;
+});
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const data = new FormData(form);
+
+    question = data.get('user-question');
+    optionATitle = data.get('user-option-a');
+    optionBTitle = data.get('user-option-b');
+
+    displayCurrentPoll();
 });
 
 submitPollButton.addEventListener('click', () => {
@@ -114,8 +122,3 @@ function displayAllPolls() {
         pastPollsEl.append(container);
     }
 }
-
-// set event listeners 
-  // get user input
-  // use user input to update state 
-  // update DOM to reflect the new state

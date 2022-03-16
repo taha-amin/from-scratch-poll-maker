@@ -119,3 +119,7 @@ form {
     width: 100%;
     border-top: solid 1px black;
 }
+
+.past-polls {
+    box-shadow: 5px 5px 15px 5px #000000;
+}

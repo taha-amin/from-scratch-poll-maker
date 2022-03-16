@@ -15,4 +15,6 @@ export function renderPastPoll(pastPoll) {
 
     //append
     container.append(pQuestionEl, pTitleA, pTitleB, pVotesA, pVotesB);
+
+    return container;
 }
