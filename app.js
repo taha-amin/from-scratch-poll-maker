@@ -15,6 +15,13 @@ const pastPollsEl = document.getElementById('past-polls');
 
 
 // let state
+let quetion = '';
+let optionAVotes = 0;
+let optionBVotes = 0;
+let optionATitle = '';
+let optionBTitle = '';
+
+const pastPolls = [];
 
 // set event listeners 
   // get user input
