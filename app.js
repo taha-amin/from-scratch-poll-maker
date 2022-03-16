@@ -1,4 +1,4 @@
-import { renderPastPoll } from './render-utils.js';
+import { renderPoll } from './render-utils.js';
 
 // import functions and grab DOM elements
 const optionAAddButton = document.getElementById('option-a-add');
@@ -117,7 +117,7 @@ function displayAllPolls() {
     pastPollsEl.textContent = '';
 
     for (let pastPoll of pastPolls) {
-        const container = renderPastPoll(pastPoll);
+        const container = renderPoll(pastPoll);
 
         pastPollsEl.append(container);
     }

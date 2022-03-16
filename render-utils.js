@@ -1,4 +1,4 @@
-export function renderPastPoll(pastPoll) {
+export function renderPoll(pastPoll) {
     const container = document.createElement('div');
     const pQuestionEl = document.createElement('p');
     const pTitleA = document.createElement('p');
