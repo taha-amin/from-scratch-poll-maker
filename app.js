@@ -23,6 +23,34 @@ let optionBTitle = '';
 
 const pastPolls = [];
 
+optionAAddButton.addEventListener('click', () => {
+  //increment option A votes
+    optionAVotes++;
+
+  //call some func
+});
+
+optionBAddButton.addEventListener('click', () => {
+  //increment option B votes
+    optionBVotes++;
+
+  //call some func
+});
+
+optionAUndoButton.addEventListener('click', () => {
+  //decrement option A votes
+    optionAVotes--;
+
+  //call some func
+});
+
+optionBUndoButton.addEventListener('click', () => {
+  //decrement option B votes
+    optionBVotes--;
+
+  //call some func
+});
+
 // set event listeners 
   // get user input
   // use user input to update state 
