@@ -18,7 +18,62 @@
             <img src="./assets/big-logo.png" />
         </div>
     </header>
+
     <main>
+        <section class="main-section">
+            <div class="top">
+                <div class="left">
+                    <form>
+                        <label>
+                            Question
+                            <input name="user-question" />
+                        </label>
+                        <label>
+                            Option A
+                            <input name="user-option-a" />
+                        </label>
+                        <label>
+                            Option B
+                            <input name="user-option-b" />
+                        </label>
+
+                        <button>Start Poll</button>
+                    </form>
+                    <div>
+                        <div>
+                            <div>
+                                <button id="option-a-add"> Vote Option A</button>
+                                <button id="option-b-add"> Vote Option B</button>
+                            </div>
+                            <div>
+                                <button id="option-a-undo"> Undo Option A</button>
+                                <button id="option-b-undo"> Undo Option B</button>
+                            </div>
+                        </div>
+                        <button id="close-poll">Close Poll</button>
+                    </div>
+                </div>
+                <div class="right">
+                    <p>Current Poll</p>
+                    <p id="poll-question"></p>
+                    <div class="options">
+                        <div id="option-a"></div>
+                        <p id="option-a-title"></p>
+                        <p id="option-a-votes"></p>
+                    </div>
+                    <div id="option-b">
+                        <p id="option-b-title"></p>
+                        <p id="option-b-votes"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom">
+                <h3>Past Polls</h3>
+                <div class="past-polls">
+
+                </div>
+            </div>
+        </section>
     </main>
     <footer>
         <div class="copy gutter-right">&copy; 2021 Alchemy Code Lab</div>
