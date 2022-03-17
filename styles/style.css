@@ -78,7 +78,7 @@ header img {
 p {
     margin: var(--gutter);
 }
-  
+
 footer {
     position: fixed;
     width: 100%;
@@ -88,4 +88,38 @@ footer {
     justify-content: flex-end;
     background-color: var(--color3);
     box-shadow: var(--shadow);
+}
+
+#label {
+    display: block;
+}
+
+#form {
+    border: solid 1px black;
+    margin: 10px;
+    padding: 10px;
+}
+
+#top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+#right {
+    text-align: center;
+}
+
+#options {
+    display: flex;
+}
+
+#bottom {
+    width: 100%;
+    border-top: solid 1px black;
+}
+
+#past-polls {
+    box-shadow: 5px 5px 15px 5px #000000;
 }
